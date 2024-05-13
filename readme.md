@@ -42,4 +42,4 @@ There's no need for installation, as the application runs in the browser.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+Open-source 
