@@ -27,9 +27,6 @@ There's no need for installation, as the application runs in the browser.
 4. Press the "Search" button or hit Enter.
 5. The weather information for the specified city will be displayed.
 
-## Screenshots
-
-![Screenshot](/path/to/screenshot.png)
 
 ## Future Improvements
 
