@@ -35,8 +35,8 @@
               </li>
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <input class="form-control me-2" id="city" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
             </form>
           </div>
         </div>
@@ -46,6 +46,7 @@
     <!-- <h1>Hello, world!</h1> -->
 
     <div class="container">
+        <h1 class="my-4 text-center">Weather for <span id="cityName"></span></h1>
         <main>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
               <div class="col">
@@ -54,9 +55,8 @@
                     <h4 class="my-0 fw-normal">Temperatures</h4>
                   </div>
                   <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
+                    <h1 class="card-title pricing-card-title"><span id="temp"></span><small class="text-body-secondary fw-light"></small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                      <li>Temperatures is <span id="temp"></span> </li>
                       <li>Min Temperatures is <span id="min_temp"></span></li>
                       <li>Max Temperatures is <span id="max_temp"></span></li>
                     </ul>
@@ -67,14 +67,14 @@
         <div class="col">
             <div class="card mb-4 rounded-3 shadow-sm">
                 <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Pro</h4>
+                    <h4 class="my-0 fw-normal">Humidity Info</h4>
                 </div>
                 <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+                    <h1 class="card-title pricing-card-title"><span id="humidity"></span><small class="text-body-secondary fw-light"></small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
                         <li>Cloud PCT is <span id="cloud_pct"></span></li>
                         <li>Feels Like is <span id="feels_like"></span></li>
-                        <li>Humidity is <span id="humidity"></span></li>
+                        
                         
                     </ul>
                     <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
@@ -84,15 +84,14 @@
               <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm border-primary">
                   <div class="card-header py-3 text-bg-primary border-primary">
-                    <h4 class="my-0 fw-normal">Enterprise</h4>
+                    <h4 class="my-0 fw-normal">Wind Info</h4>
                   </div>
                   <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+                    <h1 class="card-title pricing-card-title"><span id="wind_speed"></span><small class="text-body-secondary fw-light">/</small></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                        <li>Wind Speed is <span id="wind_speed"></span></li>
-                        <li>Cloud PCT is <span id="cloud_pct"></span></li>
-                        <li>Cloud PCT is <span id="cloud_pct"></span></li>
-                        <li>Cloud PCT is <span id="cloud_pct"></span></li>
+                        <li>Wind Degree is <span id="wind_degrees"></span></li>
+                        <li>Sunrise Time is <span id="sunrise"></span></li>
+                        <li>Sunset Time is <span id="sunset"></span></li>
                     </ul>
                     <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
                   </div>
@@ -100,9 +99,9 @@
               </div>
             </div>
         
-            <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
-        
-            <div class="table-responsive">
+            /* to do in future*/
+            <h2 class="display-6 text-center mb-4" style="display: none;">Weather of other common places</h2>
+            <div class="table-responsive" style="display: none;">
               <table class="table text-center">
                 <thead>
                   <tr>

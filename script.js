@@ -1,5 +1,5 @@
-async function fetchWeather() {
-    const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=Seattle';
+async function fetchWeather(city) {
+    const url = 'https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=' + city;
     const options = {
         method: 'GET',
         headers: {
@@ -9,6 +9,8 @@ async function fetchWeather() {
     };
 
     try {
+
+        cityName.innerHTML = city;
         const response = await fetch(url, options);
         const data = await response.json();
 
@@ -20,6 +22,9 @@ async function fetchWeather() {
         const feels_like = data.feels_like;
         const humidity = data.humidity;
         const wind_speed = data.wind_speed;
+        const sunrise = new Date(data.sunrise * 1000).toLocaleTimeString('en-US', {hour12: true});
+        const sunset = new Date(data.sunset * 1000).toLocaleTimeString('en-US', {hour12: true});
+        const wind_degrees = data.wind_degrees;
 
         // Setting the values in HTML span tags by their IDs
         document.getElementById('temp').textContent = temp+"°";
@@ -29,11 +34,19 @@ async function fetchWeather() {
         document.getElementById('feels_like').textContent = feels_like+"°";
         document.getElementById('humidity').textContent = humidity+"%";
         document.getElementById('wind_speed').textContent = wind_speed+"km/h";
-
+        document.getElementById('sunrise').textContent = sunrise;
+        document.getElementById('sunset').textContent = sunset;
+        document.getElementById('wind_degrees').textContent = wind_degrees+"°";
+        
     } catch (error) {
         console.error(error);
     }
 }
 
 // Call the async function after the DOM has loaded
-document.addEventListener('DOMContentLoaded', fetchWeather);
+document.addEventListener('DOMContentLoaded', fetchWeather("delhi"));
+
+submit.addEventListener("click", (e) =>{
+    e.preventDefault()
+    fetchWeather(city.value);
+})
